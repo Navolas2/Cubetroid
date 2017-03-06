@@ -1,0 +1,22 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\ColorPowerUp.cs">
+    <Files>
+      <File FileName="Assets\PlayerControllerVersion2.cs" Line="1" Column="1" />
+      <File FileName="Assets\PacingEnemy_Trigger.cs" Line="1" Column="1" />
+      <File FileName="Assets\TargetReticle.cs" Line="1" Column="1" />
+      <File FileName="Assets\saveController.cs" Line="34" Column="2" />
+      <File FileName="Assets\EventTriggeredObject.cs" Line="8" Column="32" />
+      <File FileName="Assets\EventTriggerScript.cs" Line="13" Column="71" />
+      <File FileName="Assets\PlayerUpgrades.cs" Line="164" Column="7" />
+      <File FileName="Assets\JumpPowerUp.cs" Line="24" Column="54" />
+      <File FileName="Assets\ColorPowerUp.cs" Line="12" Column="4" />
+      <File FileName="Assets\PlungerController.cs" Line="11" Column="3" />
+      <File FileName="Assets\PowerUp.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

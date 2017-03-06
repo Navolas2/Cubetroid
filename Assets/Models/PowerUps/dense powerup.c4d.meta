@@ -1,0 +1,285 @@
+fileFormatVersion: 2
+guid: 18bade2066c637c4490356c2a3a467fe
+timeCreated: 1476112863
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Arrow
+    100002: Arrow_1
+    100004: Arrow_2
+    100006: Arrow_2_2
+    100008: Arrow_2_3
+    100010: Arrow_3
+    100012: Arrow_3_2
+    100014: Arrow_3_3
+    100016: Cube
+    100018: Cube_1
+    100020: Cube_2
+    100022: Cube_2_2
+    100024: Cylinder
+    100026: Cylinder_2
+    100028: Cylinder_3
+    100030: Cylinder_4
+    100032: Cylinder_5
+    100034: Cylinder_6
+    100036: Cylinder_7
+    100038: Cylinder_8
+    100040: //RootNode
+    100042: Null_1
+    100044: Null_2
+    100046: Pyramid
+    100048: Pyramid_2
+    100050: Pyramid_3
+    100052: Pyramid_4
+    100054: Pyramid_5
+    100056: Pyramid_6
+    100058: Pyramid_7
+    100060: Pyramid_8
+    400000: Arrow
+    400002: Arrow_1
+    400004: Arrow_2
+    400006: Arrow_2_2
+    400008: Arrow_2_3
+    400010: Arrow_3
+    400012: Arrow_3_2
+    400014: Arrow_3_3
+    400016: Cube
+    400018: Cube_1
+    400020: Cube_2
+    400022: Cube_2_2
+    400024: Cylinder
+    400026: Cylinder_2
+    400028: Cylinder_3
+    400030: Cylinder_4
+    400032: Cylinder_5
+    400034: Cylinder_6
+    400036: Cylinder_7
+    400038: Cylinder_8
+    400040: //RootNode
+    400042: Null_1
+    400044: Null_2
+    400046: Pyramid
+    400048: Pyramid_2
+    400050: Pyramid_3
+    400052: Pyramid_4
+    400054: Pyramid_5
+    400056: Pyramid_6
+    400058: Pyramid_7
+    400060: Pyramid_8
+    2300000: Cube
+    2300002: Cube_1
+    2300004: Cube_2
+    2300006: Cube_2_2
+    2300008: Cylinder
+    2300010: Cylinder_2
+    2300012: Cylinder_3
+    2300014: Cylinder_4
+    2300016: Cylinder_5
+    2300018: Cylinder_6
+    2300020: Cylinder_7
+    2300022: Cylinder_8
+    2300024: Pyramid
+    2300026: Pyramid_2
+    2300028: Pyramid_3
+    2300030: Pyramid_4
+    2300032: Pyramid_5
+    2300034: Pyramid_6
+    2300036: Pyramid_7
+    2300038: Pyramid_8
+    3300000: Cube
+    3300002: Cube_1
+    3300004: Cube_2
+    3300006: Cube_2_2
+    3300008: Cylinder
+    3300010: Cylinder_2
+    3300012: Cylinder_3
+    3300014: Cylinder_4
+    3300016: Cylinder_5
+    3300018: Cylinder_6
+    3300020: Cylinder_7
+    3300022: Cylinder_8
+    3300024: Pyramid
+    3300026: Pyramid_2
+    3300028: Pyramid_3
+    3300030: Pyramid_4
+    3300032: Pyramid_5
+    3300034: Pyramid_6
+    3300036: Pyramid_7
+    3300038: Pyramid_8
+    4300000: Cylinder
+    4300002: Pyramid
+    4300004: Cylinder_2
+    4300006: Pyramid_2
+    4300008: Cylinder_3
+    4300010: Pyramid_3
+    4300012: Cylinder_4
+    4300014: Pyramid_4
+    4300016: Cylinder_5
+    4300018: Pyramid_5
+    4300020: Cylinder_6
+    4300022: Pyramid_6
+    4300024: Cylinder_7
+    4300026: Pyramid_7
+    4300028: Cylinder_8
+    4300030: Pyramid_8
+    4300032: Cube
+    4300034: Cube_2
+    4300036: Cube_1
+    4300038: Cube_2_2
+    7400000: Dense Animation
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Dense Animation
+      takeName: C4D Animation Take
+      firstFrame: 0
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arrow
+        weight: 1
+      - path: Arrow/Cylinder_3
+        weight: 1
+      - path: Arrow/Pyramid_3
+        weight: 1
+      - path: Arrow_1
+        weight: 1
+      - path: Arrow_1/Cylinder_4
+        weight: 1
+      - path: Arrow_1/Pyramid_4
+        weight: 1
+      - path: Arrow_2_3
+        weight: 1
+      - path: Arrow_2_3/Cylinder_7
+        weight: 1
+      - path: Arrow_2_3/Pyramid_7
+        weight: 1
+      - path: Arrow_3_3
+        weight: 1
+      - path: Arrow_3_3/Cylinder_8
+        weight: 1
+      - path: Arrow_3_3/Pyramid_8
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: Cube_1
+        weight: 1
+      - path: Cube_2
+        weight: 1
+      - path: Cube_2_2
+        weight: 1
+      - path: Null_1
+        weight: 1
+      - path: Null_1/Arrow_2
+        weight: 1
+      - path: Null_1/Arrow_2/Cylinder
+        weight: 1
+      - path: Null_1/Arrow_2/Pyramid
+        weight: 1
+      - path: Null_1/Arrow_3
+        weight: 1
+      - path: Null_1/Arrow_3/Cylinder_2
+        weight: 1
+      - path: Null_1/Arrow_3/Pyramid_2
+        weight: 1
+      - path: Null_2
+        weight: 1
+      - path: Null_2/Arrow_2_2
+        weight: 1
+      - path: Null_2/Arrow_2_2/Cylinder_5
+        weight: 1
+      - path: Null_2/Arrow_2_2/Pyramid_5
+        weight: 1
+      - path: Null_2/Arrow_3_2
+        weight: 1
+      - path: Null_2/Arrow_3_2/Cylinder_6
+        weight: 1
+      - path: Null_2/Arrow_3_2/Pyramid_6
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.003
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

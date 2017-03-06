@@ -1,0 +1,35 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{50CEFA7F-14C1-0EAE-1D05-9049B5BCB9AF}") = "Cubetroid", "Assembly-CSharp-firstpass.csproj", "{C258AA68-F3C0-3C10-E4F0-B3AE5EAA23B0}"
+EndProject
+Project("{50CEFA7F-14C1-0EAE-1D05-9049B5BCB9AF}") = "Cubetroid", "Assembly-CSharp.csproj", "{44CD6229-7618-A229-D021-82736F664515}"
+EndProject
+Project("{50CEFA7F-14C1-0EAE-1D05-9049B5BCB9AF}") = "Cubetroid", "Assembly-CSharp-Editor.csproj", "{ECE71018-8698-737D-4B35-1FD8F71010FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C258AA68-F3C0-3C10-E4F0-B3AE5EAA23B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C258AA68-F3C0-3C10-E4F0-B3AE5EAA23B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C258AA68-F3C0-3C10-E4F0-B3AE5EAA23B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C258AA68-F3C0-3C10-E4F0-B3AE5EAA23B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44CD6229-7618-A229-D021-82736F664515}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44CD6229-7618-A229-D021-82736F664515}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44CD6229-7618-A229-D021-82736F664515}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44CD6229-7618-A229-D021-82736F664515}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECE71018-8698-737D-4B35-1FD8F71010FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECE71018-8698-737D-4B35-1FD8F71010FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECE71018-8698-737D-4B35-1FD8F71010FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECE71018-8698-737D-4B35-1FD8F71010FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
