@@ -20,6 +20,6 @@ public class SpherePowerUp : PowerUp {
 
 	override public string getPowerUp()
 	{
-		return "sphere";
+		return "press X button or 3 to transform into a Sphere\n Click L-stick or press Z for umlimited speed";
 	}
 }

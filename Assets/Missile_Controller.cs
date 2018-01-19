@@ -13,6 +13,9 @@ public class Missile_Controller : MonoBehaviour {
 	private float prevDir;
 	private int launchCount;
 	public int turnRadius = 10;
+	public bool active_update = true;
+	public bool wall_destroy = true;
+	public bool death_sound = true;
 
 	public void Start(){
 		rb2d = GetComponent<Rigidbody2D> ();
@@ -34,42 +37,44 @@ public class Missile_Controller : MonoBehaviour {
 	}
 
 	void FixedUpdate(){
-		if (launchCount != 0) {
-			launchCount--;
-		} else {
-			myBody.enabled = true;
-		}
-		float angle = calcAngle ();
-		if (angle > 1 || angle < -1) {
-			rotation = angle;
-		}
+		
+			if (launchCount != 0) {
+				launchCount--;
+			} else {
+				myBody.enabled = true;
+			}
+		if (active_update) {
+			float angle = calcAngle ();
+			if (angle > 1 || angle < -1) {
+				rotation = angle;
+			}
 
-		if (rotation > turnRadius) {
-			this.transform.Rotate (0f, 0f, turnRadius, Space.Self);
+			if (rotation > turnRadius) {
+				this.transform.Rotate (0f, 0f, turnRadius, Space.Self);
 
-			Vector2 t = Vector2.right;
-			currentRotation -= turnRadius;
-			t = RotateVector (t, Mathf.Deg2Rad * (currentRotation));
-			CurVel = new Vector2 (Speed * t.x, Speed * t.y);
-			rotation -= turnRadius;
-		} else if (rotation < -1 * turnRadius) {
-			this.transform.Rotate (0f, 0f, -1 * turnRadius, Space.Self);
-			Vector2 t = Vector2.right;
-			currentRotation += turnRadius;
-			t = RotateVector (t, Mathf.Deg2Rad * (currentRotation));
-			CurVel = new Vector2 (Speed * t.x, Speed * t.y);
-			rotation += turnRadius;
-		}
-		else if(rotation != 0) {
-			this.transform.Rotate (0f, 0f, rotation, Space.Self);
-			Vector2 t = Vector2.right;
-			currentRotation -= rotation;
-			t = RotateVector (t, Mathf.Deg2Rad * (currentRotation));
+				Vector2 t = Vector2.right;
+				currentRotation -= turnRadius;
+				t = RotateVector (t, Mathf.Deg2Rad * (currentRotation));
+				CurVel = new Vector2 (Speed * t.x, Speed * t.y);
+				rotation -= turnRadius;
+			} else if (rotation < -1 * turnRadius) {
+				this.transform.Rotate (0f, 0f, -1 * turnRadius, Space.Self);
+				Vector2 t = Vector2.right;
+				currentRotation += turnRadius;
+				t = RotateVector (t, Mathf.Deg2Rad * (currentRotation));
+				CurVel = new Vector2 (Speed * t.x, Speed * t.y);
+				rotation += turnRadius;
+			} else if (rotation != 0) {
+				this.transform.Rotate (0f, 0f, rotation, Space.Self);
+				Vector2 t = Vector2.right;
+				currentRotation -= rotation;
+				t = RotateVector (t, Mathf.Deg2Rad * (currentRotation));
 
-			CurVel = new Vector2 (Speed * t.x, Speed * t.y);
-			rotation = 0;
+				CurVel = new Vector2 (Speed * t.x, Speed * t.y);
+				rotation = 0;
+			}
+			rb2d.velocity = CurVel;
 		}
-		rb2d.velocity = CurVel;
 	}
 
 	Vector2 RotateVector(Vector2 t, float curRot){
@@ -112,7 +117,18 @@ public class Missile_Controller : MonoBehaviour {
 			if (other.gameObject.GetComponent<Rigidbody2D> () != null) {
 				other.gameObject.GetComponent<Rigidbody2D> ().velocity = new Vector2 (CurVel.x / 2, CurVel.y / 2);
 			}
-			if (!other.isTrigger) {
+			if (!other.isTrigger && wall_destroy) {
+				if (!(other.name == "Missile Launcher")) {
+					if (death_sound) {
+						AudioManager.Singleton.PlaySound ("Explosion");
+					}
+					Destroy (this.gameObject);
+				}
+			}
+			else if (!other.isTrigger && !other.CompareTag("Ground") && !other.CompareTag("Wall")) {
+				if (death_sound) {
+					AudioManager.Singleton.PlaySound ("Explosion");
+				}
 				Destroy (this.gameObject);
 			}
 		}

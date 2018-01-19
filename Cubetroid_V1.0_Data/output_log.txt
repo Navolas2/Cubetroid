@@ -1,0 +1,303 @@
+Initialize engine version: 5.5.0f3 (38b4efef76f0)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 750 (ID=0x1381)
+    Vendor:   NVIDIA
+    VRAM:     994 MB
+    Driver:   22.21.13.8494
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Alienware\Documents\Cubetroid\Cubetroid_V1.0_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Alienware\Documents\Cubetroid\Cubetroid_V1.0_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Alienware\Documents\Cubetroid\Cubetroid_V1.0_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\Alienware\Documents\Cubetroid\Cubetroid_V1.0_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\Alienware\Documents\Cubetroid\Cubetroid_V1.0_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Alienware\Documents\Cubetroid\Cubetroid_V1.0_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Alienware\Documents\Cubetroid\Cubetroid_V1.0_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Alienware\Documents\Cubetroid\Cubetroid_V1.0_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Alienware\Documents\Cubetroid\Cubetroid_V1.0_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Alienware\Documents\Cubetroid\Cubetroid_V1.0_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Alienware\Documents\Cubetroid\Cubetroid_V1.0_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading C:\Users\Alienware\Documents\Cubetroid\Cubetroid_V1.0_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+Platform assembly: C:\Users\Alienware\Documents\Cubetroid\Cubetroid_V1.0_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\Alienware\Documents\Cubetroid\Cubetroid_V1.0_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.207 seconds
+Platform assembly: C:\Users\Alienware\Documents\Cubetroid\Cubetroid_V1.0_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Alienware\Documents\Cubetroid\Cubetroid_V1.0_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 4886x1080 at -1366,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 1.194293 ms
+The referenced script on this Behaviour (Game Object 'Enable_Vision') is missing!
+ 
+(Filename:  Line: 1754)
+
+The referenced script on this Behaviour (Game Object 'Enable_Vision') is missing!
+ 
+(Filename:  Line: 1754)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 5.626280 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 15505.
+Total: 2.506955 ms (FindLiveObjects: 0.697554 ms CreateObjectMapping: 0.154974 ms MarkObjects: 1.629452 ms  DeleteObjects: 0.023947 ms)
+
+DEAD
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 44.485111 ms
+
+Unloading 240 unused Assets to reduce memory usage. Loaded Objects now: 442.
+Total: 0.909318 ms (FindLiveObjects: 0.034894 ms CreateObjectMapping: 0.029763 ms MarkObjects: 0.200816 ms  DeleteObjects: 0.643159 ms)
+
+Hello, I'm out
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.521712 ms
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 457.
+Total: 0.561054 ms (FindLiveObjects: 0.038658 ms CreateObjectMapping: 0.032842 ms MarkObjects: 0.318158 ms  DeleteObjects: 0.170711 ms)
+
+The referenced script on this Behaviour (Game Object 'Enable_Vision') is missing!
+ 
+(Filename:  Line: 1754)
+
+The referenced script on this Behaviour (Game Object 'Enable_Vision') is missing!
+ 
+(Filename:  Line: 1754)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.342448 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 15511.
+Total: 2.194611 ms (FindLiveObjects: 0.693107 ms CreateObjectMapping: 0.141632 ms MarkObjects: 1.336609 ms  DeleteObjects: 0.022236 ms)
+
+The referenced script on this Behaviour (Game Object 'Enable_Vision') is missing!
+ 
+(Filename:  Line: 1754)
+
+The referenced script on this Behaviour (Game Object 'Enable_Vision') is missing!
+ 
+(Filename:  Line: 1754)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 26.550528 ms
+
+Unloading 29 unused Assets to reduce memory usage. Loaded Objects now: 15515.
+Total: 2.303401 ms (FindLiveObjects: 0.689686 ms CreateObjectMapping: 0.147447 ms MarkObjects: 1.416320 ms  DeleteObjects: 0.048921 ms)
+
+I'm hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+DEAD
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 46.150482 ms
+
+Unloading 232 unused Assets to reduce memory usage. Loaded Objects now: 442.
+Total: 0.959266 ms (FindLiveObjects: 0.040710 ms CreateObjectMapping: 0.030447 ms MarkObjects: 0.231948 ms  DeleteObjects: 0.655133 ms)
+
+Hello, I'm out
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.518291 ms
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 457.
+Total: 0.599028 ms (FindLiveObjects: 0.040368 ms CreateObjectMapping: 0.033184 ms MarkObjects: 0.354080 ms  DeleteObjects: 0.169684 ms)
+
+The referenced script on this Behaviour (Game Object 'Enable_Vision') is missing!
+ 
+(Filename:  Line: 1754)
+
+The referenced script on this Behaviour (Game Object 'Enable_Vision') is missing!
+ 
+(Filename:  Line: 1754)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.455001 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 15511.
+Total: 1.931874 ms (FindLiveObjects: 0.507343 ms CreateObjectMapping: 0.141632 ms MarkObjects: 1.261345 ms  DeleteObjects: 0.021210 ms)
+
+The referenced script on this Behaviour (Game Object 'Enable_Vision') is missing!
+ 
+(Filename:  Line: 1754)
+
+The referenced script on this Behaviour (Game Object 'Enable_Vision') is missing!
+ 
+(Filename:  Line: 1754)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 26.489632 ms
+
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 15515.
+Total: 2.316401 ms (FindLiveObjects: 0.693107 ms CreateObjectMapping: 0.143684 ms MarkObjects: 1.437188 ms  DeleteObjects: 0.041736 ms)
+
+I'm hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I'm hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+The referenced script on this Behaviour (Game Object 'Enable_Vision') is missing!
+ 
+(Filename:  Line: 1754)
+
+The referenced script on this Behaviour (Game Object 'Enable_Vision') is missing!
+ 
+(Filename:  Line: 1754)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 44.047215 ms
+
+Unloading 57 unused Assets to reduce memory usage. Loaded Objects now: 15515.
+Total: 2.381744 ms (FindLiveObjects: 0.747844 ms CreateObjectMapping: 0.143000 ms MarkObjects: 1.397846 ms  DeleteObjects: 0.092368 ms)
+
+The referenced script on this Behaviour (Game Object 'Enable_Vision') is missing!
+ 
+(Filename:  Line: 1754)
+
+The referenced script on this Behaviour (Game Object 'Enable_Vision') is missing!
+ 
+(Filename:  Line: 1754)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 49.058384 ms
+
+Unloading 26 unused Assets to reduce memory usage. Loaded Objects now: 15515.
+Total: 2.511744 ms (FindLiveObjects: 0.666080 ms CreateObjectMapping: 0.143342 ms MarkObjects: 1.641768 ms  DeleteObjects: 0.059526 ms)
+
+The referenced script on this Behaviour (Game Object 'Enable_Vision') is missing!
+ 
+(Filename:  Line: 1754)
+
+The referenced script on this Behaviour (Game Object 'Enable_Vision') is missing!
+ 
+(Filename:  Line: 1754)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 46.714272 ms
+
+Unloading 28 unused Assets to reduce memory usage. Loaded Objects now: 15515.
+Total: 2.277059 ms (FindLiveObjects: 0.672238 ms CreateObjectMapping: 0.131368 ms MarkObjects: 1.417004 ms  DeleteObjects: 0.055763 ms)
+
+DEAD
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 49.571548 ms
+
+Unloading 244 unused Assets to reduce memory usage. Loaded Objects now: 442.
+Total: 0.968845 ms (FindLiveObjects: 0.050973 ms CreateObjectMapping: 0.030105 ms MarkObjects: 0.232290 ms  DeleteObjects: 0.654449 ms)
+
+The referenced script on this Behaviour (Game Object 'Enable_Vision') is missing!
+ 
+(Filename:  Line: 1754)
+
+The referenced script on this Behaviour (Game Object 'Enable_Vision') is missing!
+ 
+(Filename:  Line: 1754)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.315079 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 15511.
+Total: 2.328717 ms (FindLiveObjects: 0.730739 ms CreateObjectMapping: 0.141289 ms MarkObjects: 1.433425 ms  DeleteObjects: 0.021894 ms)
+
+pressed Q
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+pressed Q
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+pressed Q
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+pressed Q
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+pressed Q
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+pressed Q
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+pressed Q
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+pressed Q
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+pressed Q
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+pressed Q
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+pressed Q
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+pressed Q
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+pressed Q
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+pressed Q
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+pressed Q
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+pressed Q
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+The referenced script on this Behaviour (Game Object 'Enable_Vision') is missing!
+ 
+(Filename:  Line: 1754)
+
+The referenced script on this Behaviour (Game Object 'Enable_Vision') is missing!
+ 
+(Filename:  Line: 1754)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 48.607491 ms
+
+Unloading 100 unused Assets to reduce memory usage. Loaded Objects now: 15515.
+Total: 2.807666 ms (FindLiveObjects: 0.707817 ms CreateObjectMapping: 0.150868 ms MarkObjects: 1.791268 ms  DeleteObjects: 0.157026 ms)
+
+pressed Q
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 1434 -> priority: 1 

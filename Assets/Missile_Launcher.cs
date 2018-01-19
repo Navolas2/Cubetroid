@@ -7,6 +7,7 @@ public class Missile_Launcher : EnemyController {
 	public Rigidbody2D missile;
 	private bool isDestroyed;
 	public float launchSpeed = 15f;
+	public bool play_sound = true;
 
 	private int health;
 
@@ -29,7 +30,9 @@ public class Missile_Launcher : EnemyController {
 		if(!isDestroyed){
 		float rot = -20;
 		//rot = Mathf.Rad2Deg * rot + 90;
-
+			if (play_sound) {
+				AudioManager.Singleton.PlaySound ("Missile_Launch");
+			}
 		Rigidbody2D testClone = (Rigidbody2D)Instantiate (missile, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y), gameObject.transform.rotation);
 		testClone.transform.Rotate (0, 0, rot, Space.Self);
 		testClone.GetComponent<Missile_Controller> ().Start ();

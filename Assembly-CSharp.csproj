@@ -46,8 +46,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\AudioManager.cs" />
      <Compile Include="Assets\BulletManager.cs" />
      <Compile Include="Assets\ButtonController.cs" />
+     <Compile Include="Assets\Button_Manager.cs" />
      <Compile Include="Assets\CameraController.cs" />
      <Compile Include="Assets\ClingPowerUp.cs" />
      <Compile Include="Assets\CloneManager.cs" />
@@ -56,6 +58,8 @@
      <Compile Include="Assets\ColorPowerUp.cs" />
      <Compile Include="Assets\DamageHandler.cs" />
      <Compile Include="Assets\DensePowerUp.cs" />
+     <Compile Include="Assets\Door_Controller.cs" />
+     <Compile Include="Assets\Door_Trigger.cs" />
      <Compile Include="Assets\ElevatorControl.cs" />
      <Compile Include="Assets\ElevatorControl_Trigger.cs" />
      <Compile Include="Assets\EmptyClass.cs" />
@@ -80,6 +84,10 @@
      <Compile Include="Assets\PlungerController.cs" />
      <Compile Include="Assets\PowerUp.cs" />
      <Compile Include="Assets\PrisimPowerUp.cs" />
+     <Compile Include="Assets\Room_Linker.cs" />
+     <Compile Include="Assets\Room_Vision.cs" />
+     <Compile Include="Assets\Scene_Switcher.cs" />
+     <Compile Include="Assets\Sound.cs" />
      <Compile Include="Assets\SpherePowerUp.cs" />
      <Compile Include="Assets\SplitPowerUp.cs" />
      <Compile Include="Assets\TargetReticle.cs" />

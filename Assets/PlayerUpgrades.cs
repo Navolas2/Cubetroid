@@ -12,6 +12,7 @@ public class PlayerUpgrades : MonoBehaviour {
 	public bool testing = false;
 	public bool default_stat = true;
 
+
 	private Vector3 _PlayerLocation;
 	public Vector3 Location {
 		get{ return _PlayerLocation; }
@@ -74,7 +75,11 @@ public class PlayerUpgrades : MonoBehaviour {
 
 	public bool DoesColorExist(Color myCol)
 	{
-		return _mats.Contains (myCol);
+		if (_mats == null) {
+			return true;
+		} else {
+			return _mats.Contains (myCol);
+		}
 	}
 
 	private bool _split;
@@ -87,21 +92,19 @@ public class PlayerUpgrades : MonoBehaviour {
 		if (upgrades == null) {
 			DontDestroyOnLoad (gameObject);
 			upgrades = this;
-			LoadData ();
 		} else if (upgrades != this) {
 			Destroy (gameObject);
 		}
 	}
 	// Use this for initialization
 	void Start () {
-	
 	}
 
 	private void DefaultStats()
 	{
 		if (!testing) {
-			_jump = false;
-			_jumps = 0;
+			_jump = true;
+			_jumps = 2;
 			_sphere = false;
 			_triangle = false;
 			_dense = false;
@@ -114,7 +117,7 @@ public class PlayerUpgrades : MonoBehaviour {
 		} else {
 			print ("Default");
 			_jump = true;
-			_jumps = 3;
+			_jumps = 2;
 			_sphere = true;
 			_triangle = true;
 			_dense = true;
@@ -144,7 +147,8 @@ public class PlayerUpgrades : MonoBehaviour {
 		file.Close();
 	}
 
-	public void LoadData(){
+	public void LoadData(bool default_stat){
+		
 		if(default_stat){
 			DefaultStats ();
 		}
@@ -167,6 +171,41 @@ public class PlayerUpgrades : MonoBehaviour {
 		} else {
 			DefaultStats ();
 		}
+	}
+
+	public void continue_game(){
+		default_stat = false;
+		LoadData (default_stat);
+		AudioManager.Singleton.StopSound ("GameOver");
+		if (!AudioManager.Singleton.IsPlaying ("BMG")) {
+			AudioManager.Singleton.PlaySound ("BMG");
+		}
+		UnityEngine.SceneManagement.SceneManager.LoadScene ("Game Building Scene");
+	}
+	public void new_game(){
+		default_stat = true;
+		LoadData (default_stat);
+		UnityEngine.SceneManagement.SceneManager.LoadScene ("Game Building Scene");
+	}
+
+	public void Title_Screen(){
+		Debug.Log ("Hello, I'm out");
+		//Camera c = FindObjectOfType<Camera> ();
+	//	c.GetComponent<CameraController> ().HideOptions ();
+		AudioManager.Singleton.StopSound ("GameOver");
+		AudioManager.Singleton.PlaySound ("BMG");
+		UnityEngine.SceneManagement.SceneManager.LoadScene ("Title_Scene");
+	}
+	public void ContinuePlaying(){
+		Debug.Log ("Hello Again");
+		Camera c = FindObjectOfType<Camera> ();
+		c.GetComponent<CameraController> ().HideOptions ();
+	}
+
+	public void Game_Over(){
+		AudioManager.Singleton.StopSound ("BMG");
+		AudioManager.Singleton.PlaySound ("GameOver");
+		UnityEngine.SceneManagement.SceneManager.LoadScene ("Game Over"); 
 	}
 }
 

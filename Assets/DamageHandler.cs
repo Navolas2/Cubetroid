@@ -14,10 +14,12 @@ public class DamageHandler : MonoBehaviour {
 		if (other.CompareTag ("Player") && this.CompareTag("Hazard")) {
 			PlayerControllerVersion2 p = other.gameObject.GetComponent<PlayerControllerVersion2> ();
 			p.TakeDamage (Damage);
+			AudioManager.Singleton.PlaySound ("Hit_Player");
 		}
 		if (other.CompareTag ("Player_Bullet") && this.CompareTag ("Enemy")) {
 			EnemyController E_in = this.gameObject.GetComponent<EnemyController> ();
 			E_in.TakeDamage (1);
+			AudioManager.Singleton.PlaySound ("Hit_Enemy");
 		}
 		if (other.CompareTag ("Enemy") && this.CompareTag ("Player")) {
 			if (other.bounds.max.y < this.GetComponent<Collider2D>().bounds.min.y){// && other.transform.position.y > other.bounds.min.y) {
@@ -26,6 +28,7 @@ public class DamageHandler : MonoBehaviour {
 						//Damage Enemy
 						EnemyController E_in = other.gameObject.GetComponent<EnemyController> ();
 						E_in.TakeDamage (Damage);
+						AudioManager.Singleton.PlaySound ("Hit_Enemy");
 					}
 				}
 			}
@@ -41,6 +44,7 @@ public class DamageHandler : MonoBehaviour {
 					//Damage Player because Below
 					PlayerControllerVersion2 p = other.gameObject.GetComponent<PlayerControllerVersion2> ();
 					p.TakeDamage (Damage);
+					AudioManager.Singleton.PlaySound ("Hit_Player");
 				} else {
 					if (other.bounds.max.x < this.GetComponent<Collider2D> ().bounds.max.x) {
 						float dist = this.GetComponent<Collider2D> ().bounds.max.x - other.bounds.max.x;
@@ -48,6 +52,7 @@ public class DamageHandler : MonoBehaviour {
 							//damage Player because against
 							PlayerControllerVersion2 p = other.gameObject.GetComponent<PlayerControllerVersion2> ();
 							p.TakeDamage (Damage);
+							AudioManager.Singleton.PlaySound ("Hit_Player");
 						}
 					} 
 					if (other.bounds.min.x > this.GetComponent<Collider2D> ().bounds.min.x) {
@@ -56,6 +61,7 @@ public class DamageHandler : MonoBehaviour {
 							//damage Player because against
 							PlayerControllerVersion2 p = other.gameObject.GetComponent<PlayerControllerVersion2> ();
 							p.TakeDamage (Damage);
+							AudioManager.Singleton.PlaySound ("Hit_Player");
 						}
 					}
 				}

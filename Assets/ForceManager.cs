@@ -7,65 +7,176 @@ public class ForceManager : MonoBehaviour {
 	private int CurJumps;
 	private int WallJump;
 	private int WallDir;
+	private int JumpDir;
 	private GameObject clungWall;
 	private int MaxJumps;
 	private bool onGround;
+	private List<GameObject> current_ground;
 	private bool ClingMode;
 	private bool Clinging;
+	private bool limit_breaker = false;
 
-	public float speed = 10;
 	public float jumpPower = 7;
-
+	public float accel_speed = 10;
+	[Space(15)]
+	public float max_cube_ground_speed = 20;
+	public float max_cube_air_speed = 20;
+	[Space(10)]
+	public float max_sphere_ground_speed = 40;
+	public float max_sphere_air_speed = 40;
+	[Space(10)]
+	public float max_pyramid_ground_speed = 25;
+	public float max_pyramid_air_speed = 25;
+	[Space(10)]
+	public float max_cube_dense_ground_speed = 20;
+	public float max_cube_dense_air_speed = 20;
+	[Space(20)]
+	public bool Testing = false;
 	private Rigidbody2D rb2d;
 
 	private PlayerControllerVersion2 parent;
 	// Use this for initialization
 	void Start () {
 		WallDir = -1;
+		JumpDir = -1;
 
-		onGround = true;
-
+		onGround = false;
+		current_ground = new List<GameObject> ();
 		rb2d = GetComponent<Rigidbody2D> ();
-		SetStats ();
+		UpdateJumps ();
+
+		//parent.Camera.jumpsUpdate (CurJumps + "", MaxJumps);
+		//SetStats ();
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		float moveHorizontal = Input.GetAxis ("Horizontal") * speed;
-		float moveVertical = 0;
-		if (Input.GetKeyDown (KeyCode.Space)  && PlayerUpgrades.upgrades.jump) {
-			Vector2 curVel = rb2d.velocity;
-			if (CurJumps > 0 || WallJump > 0) {
-				if (WallJump > 0) {
-					WallJump--;
-					curVel.y = jumpPower;
-					if (WallDir == 2) {
-						curVel.x = jumpPower * -1;
-					} else if (WallDir == 4) {
-						curVel.x = jumpPower;
-					} else if (WallDir == 1) {
-						curVel.y = jumpPower * -1;
-					} else if (WallDir == 0) {
-						float rot = Mathf.Deg2Rad * (180 + (Mathf.Rad2Deg * FindAngleToCenter (clungWall, this.gameObject)));
-						float xPrime = -1 * jumpPower * Mathf.Sin (rot);
-						float yPrime = jumpPower * Mathf.Cos (rot);
-						curVel.y = yPrime;
-						curVel.x = xPrime;
-					}
+		if (!parent.cam.Active) {
+			float moveHorizontal = Input.GetAxis ("Horizontal") * accel_speed;
+			float moveVertical = 0;
+			if (Input.GetButtonDown ("Unlimited") && PlayerUpgrades.upgrades.sphere) {
+				limit_breaker = !limit_breaker;
+				AudioManager.Singleton.PlaySound ("LimitBreak");
+				if (limit_breaker) {
+					parent.Camera.jumpsUpdate ("---", MaxJumps);
 				} else {
-					CurJumps--;
-					curVel.y = jumpPower;
+					parent.Camera.jumpsUpdate (CurJumps + "", MaxJumps);
 				}
-				onGround = false;
-				parent.Camera.jumpsUpdate (CurJumps, MaxJumps);
-				rb2d.velocity = curVel;
 			}
+			if (Input.GetButtonDown ("Jump") && PlayerUpgrades.upgrades.jump && !limit_breaker) {
+				AudioManager.Singleton.PlaySound ("Jump");
+				Vector2 curVel = rb2d.velocity;
+				if (CurJumps > 0 || WallJump > 0) {
+					if (WallJump > 0) {
+						WallJump--;
+						curVel.y = jumpPower;
+						if (JumpDir == 4 && WallDir == 2) {
+							curVel.x = jumpPower * -1;
+						} else if (JumpDir == 2 && WallDir == 2) {
+							curVel.x = jumpPower;
+						} else if (WallDir == 1) {
+							curVel.y = jumpPower * -1;
+						} else if (WallDir == 0) {
+							float rot = Mathf.Deg2Rad * (180 + (Mathf.Rad2Deg * FindAngleToCenter (clungWall, this.gameObject)));
+							float xPrime = -1 * jumpPower * Mathf.Sin (rot);
+							float yPrime = jumpPower * Mathf.Cos (rot);
+							curVel.y = yPrime;
+							curVel.x = xPrime;
+						}
+					} else {
+						if (!Testing) {
+							CurJumps--;
+						}
+						curVel.y = jumpPower;
+					}
+					onGround = false;
+					current_ground.Clear ();
+					parent.Camera.jumpsUpdate (CurJumps + "", MaxJumps);
+					rb2d.velocity = curVel;
+				}
+			}
+			Vector2 movement = new Vector2 (moveHorizontal, moveVertical);
+			movement = ApplyWallGravity (movement);
+			//Toggle?
+			movement = SplitAttraction (movement);
+			rb2d.AddForce (movement);
+			Vector2 vel = rb2d.velocity;
+			if (!limit_breaker) {
+				switch (parent.Form) {
+				case 0:
+					if (onGround || Clinging) {
+						if (vel.x > max_cube_ground_speed) {
+							vel.x = max_cube_ground_speed;
+						}
+						if (vel.y > max_cube_ground_speed) {
+							vel.y = max_cube_ground_speed;
+						}
+					} else {
+						if (vel.y > max_cube_air_speed) {
+							vel.y = max_cube_air_speed;
+						}
+						if (vel.x > max_cube_air_speed) {
+							vel.x = max_cube_air_speed;
+						}
+					}
+					break;
+				case 1:
+			
+					if (onGround || Clinging) {
+						if (vel.x > max_sphere_ground_speed) {
+							vel.x = max_sphere_ground_speed;
+						}
+						if (vel.y > max_sphere_ground_speed) {
+							vel.y = max_sphere_ground_speed;
+						}
+					} else {
+						if (vel.y > max_sphere_air_speed) {
+							vel.y = max_sphere_air_speed;
+						}
+						if (vel.x > max_sphere_ground_speed) {
+							vel.x = max_sphere_ground_speed;
+						}
+					}
+
+					break;
+				case 2:
+					if (onGround || Clinging) {
+						if (vel.x > max_pyramid_ground_speed) {
+							vel.x = max_pyramid_ground_speed;
+						}
+						if (vel.y > max_pyramid_ground_speed) {
+							vel.y = max_pyramid_ground_speed;
+						}
+					} else {
+						if (vel.y > max_pyramid_air_speed) {
+							vel.y = max_pyramid_air_speed;
+						}
+						if (vel.x > max_pyramid_air_speed) {
+							vel.x = max_pyramid_air_speed;
+						}
+					}
+					break;
+				case 3:
+					if (onGround || Clinging) {
+						if (vel.x > max_cube_dense_ground_speed) {
+							vel.x = max_cube_dense_ground_speed;
+						}
+						if (vel.y > max_cube_dense_ground_speed) {
+							vel.y = max_cube_dense_ground_speed;
+						}
+					} else {
+						if (vel.y > max_cube_dense_air_speed) {
+							vel.y = max_cube_dense_air_speed;
+						}
+						if (vel.x > max_cube_dense_air_speed) {
+							vel.x = max_cube_dense_air_speed;
+						}
+					}
+					break;
+				}
+			}
+			rb2d.velocity = vel;
 		}
-		Vector2 movement = new Vector2 (moveHorizontal, moveVertical);
-		movement = ApplyWallGravity (movement);
-		//Toggle?
-		movement = SplitAttraction (movement);
-		rb2d.AddForce (movement);
 	}
 
 	public static float FindAngleToCenter(GameObject g1, GameObject g2){
@@ -108,7 +219,7 @@ public class ForceManager : MonoBehaviour {
 	Vector2 ApplyWallGravity (Vector2 movement)
 	{
 		if(WallDir != -1 && Clinging && ClingMode){
-			float gravityCounter = 9.8f;
+			float gravityCounter = 9.8f * rb2d.gravityScale;
 
 			float rot = 0f;
 
@@ -124,8 +235,8 @@ public class ForceManager : MonoBehaviour {
 			}
 			//float xPrime = (movement.x * Mathf.Cos(rot)) - (movement.y * Mathf.Sin (rot));
 			//float yPrime = (movement.x * Mathf.Sin(rot)) + (movement.y * Mathf.Cos (rot));
-			float xPrime = -1 * 9.8f * Mathf.Sin (rot);
-			float yPrime = 9.8f * Mathf.Cos (rot);
+			float xPrime = -1 * gravityCounter * Mathf.Sin (rot);
+			float yPrime = gravityCounter * Mathf.Cos (rot);
 
 			if (WallDir == 2) {
 				rot = Mathf.Deg2Rad * (clungWall.transform.rotation.eulerAngles.z);
@@ -148,27 +259,38 @@ public class ForceManager : MonoBehaviour {
 		return movement;
 	}
 
-	void Grounded()
+	void Grounded(GameObject ground)
 	{
+		if (onGround == false) {
+			AudioManager.Singleton.PlaySound ("Landing");
+		}
+		if (!current_ground.Contains (ground)) {
+			current_ground.Add (ground);
+		}
 		onGround = true;
+
 		CurJumps = MaxJumps;
 		WallJump = 0;
 		WallDir = -1;
-		parent.Camera.jumpsUpdate (CurJumps, MaxJumps);
+		if (!limit_breaker) {
+			parent.Camera.jumpsUpdate (CurJumps + "", MaxJumps);
+		} else {
+			parent.Camera.jumpsUpdate ("---", MaxJumps);
+		}
 	}
 
 	void AddWallJumps()
 	{
 		if (WallJump == 0) {
 			WallJump++;
-			parent.Camera.jumpsUpdate (CurJumps + WallJump, MaxJumps);
+			parent.Camera.jumpsUpdate ((CurJumps + WallJump) + "", MaxJumps);
 		}
 	}
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.gameObject.CompareTag ("Ground")) {
-			Grounded ();
+		if (other.gameObject.CompareTag ("Ground") || other.gameObject.CompareTag("Ignore")) {
+			Grounded (other.gameObject);
 		} else if (other.gameObject.CompareTag ("Player") || other.gameObject.CompareTag("Player_Bullet")) {
 			//MergeParts (other.gameObject);
 			parent.Clone.MergeParts (other.gameObject);
@@ -177,21 +299,24 @@ public class ForceManager : MonoBehaviour {
 				if (parent.ClingCheck (other) && ClingMode == true) {
 					Clinging = true;
 					clungWall = other.gameObject;
+					AudioManager.Singleton.PlaySound ("Landing");
 				}
 				if (other.gameObject.transform.GetChild (0).CompareTag ("Wall")) {
 					if (this.gameObject.transform.position.x > other.gameObject.transform.position.x) {
 						if (Clinging) {
-							WallDir = 4;
+							WallDir = 2;
+							JumpDir = 2;
 						}
 					} else {
 						if (Clinging) {
 							WallDir = 2;
+							JumpDir = 4;
 						}
 					}
 					AddWallJumps ();
 				} else if (other.gameObject.transform.GetChild (0).CompareTag ("Roof")) {
 					if (this.gameObject.transform.position.y > other.gameObject.transform.position.y) {
-						Grounded ();
+						Grounded (other.gameObject);
 					} else {
 						if (Clinging) {
 							WallDir = 1;
@@ -212,13 +337,21 @@ public class ForceManager : MonoBehaviour {
 	void OnTriggerExit2D(Collider2D other)
 	{
 		if (other.gameObject.CompareTag("Ground")) {
-			onGround = false;
+			if(current_ground.Remove (other.gameObject)){
+				if (current_ground.Count == 0) {
+					onGround = false;
+				}
+			}
 		}else if (other.gameObject.CompareTag ("Cling")) {
 			if (other.isTrigger) {
 				if (other.gameObject == clungWall) {
 					Clinging = false;
 					WallJump = 0;
-					parent.Camera.jumpsUpdate (CurJumps, MaxJumps);
+					if (!limit_breaker) {
+						parent.Camera.jumpsUpdate (CurJumps + "", MaxJumps);
+					} else {
+						parent.Camera.jumpsUpdate ("---", MaxJumps);
+					}
 				}
 			}
 		}

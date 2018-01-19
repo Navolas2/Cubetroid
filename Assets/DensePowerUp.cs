@@ -19,6 +19,6 @@ public class DensePowerUp : PowerUp{
 
 	override public string getPowerUp()
 	{
-		return "dense";
+		return "Press LB or 2 to condense down and shrink \nPress RB or 1 to grow to normal";
 	}
 }

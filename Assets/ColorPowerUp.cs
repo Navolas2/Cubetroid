@@ -22,6 +22,6 @@ public class ColorPowerUp : PowerUp {
 
 	override public string getPowerUp()
 	{
-		return "color";
+		return "Gives access to a new color\nChange colors by clicking the right stick\nOr by pressing Q or E";
 	}
 }

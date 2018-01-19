@@ -19,6 +19,6 @@ public class ClingPowerUp : PowerUp {
 
 	override public string getPowerUp()
 	{
-		return "cling";
+		return "Press Y or C to activate cling mode\nStick to surfaces the same color as you\nLeft and Right to move up and down on wall";
 	}
 }

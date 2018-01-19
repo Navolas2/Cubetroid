@@ -53,25 +53,25 @@ public class HealthBar : MonoBehaviour {
 			curiFrame++;
 			TransparencyAdjust ();
 		}
-
+		/*
 		Vector3 position = new Vector3 ();
 		position.z = -100.5f;
 		Vector3 scale = new Vector3 ();
 		Vector3 curScale = CurrentScale ();
-		if (Input.GetKeyDown (KeyCode.Alpha1)) {
+		if (Input.GetButtonDown("cube")) {
 			formIndex = 0;
 			//gameObject.transform.position = position;
 
 			gameObject.transform.localPosition = position;
 			gameObject.transform.localScale = MultiplyVector(defaultScale, CurrentScale());
 		}
-		else if (Input.GetKeyDown (KeyCode.Alpha2) && PlayerUpgrades.upgrades.sphere) {
+		else if (Input.GetButtonDown("sphere") && PlayerUpgrades.upgrades.sphere) {
 			formIndex = 1;
 			//gameObject.transform.position = position;
 			gameObject.transform.localPosition = position;
 			gameObject.transform.localScale = MultiplyVector(defaultScale, CurrentScale());
 		}
-		else if (Input.GetKeyDown (KeyCode.Alpha3) && PlayerUpgrades.upgrades.triangle) {
+		else if (Input.GetKeyDown (KeyCode.Alpha6) && PlayerUpgrades.upgrades.triangle) {
 			formIndex = 2;
 			scale = MultiplyVector (formScale [formIndex], curScale);
 			position.y = -13.73f;
@@ -80,13 +80,51 @@ public class HealthBar : MonoBehaviour {
 			gameObject.transform.localScale = scale;
 
 		}
-		else if (Input.GetKeyDown (KeyCode.Alpha4) && PlayerUpgrades.upgrades.dense) {
+		else if (Input.GetButtonDown("dense") && PlayerUpgrades.upgrades.dense) {
 			formIndex = 3;
 			position.z = -20.75f;
 			scale = MultiplyVector (formScale [formIndex], curScale);
 			gameObject.transform.localPosition = position;
 			gameObject.transform.localScale = scale;
-		}
+		}*/
+	}
+
+	public void ChangeCube(){
+		Vector3 position = new Vector3 ();
+		position.z = -100.5f;
+		Vector3 scale = new Vector3 ();
+		Vector3 curScale = CurrentScale ();
+
+		formIndex = 0;
+		//gameObject.transform.position = position;
+
+		gameObject.transform.localPosition = position;
+		gameObject.transform.localScale = MultiplyVector(defaultScale, CurrentScale());
+	}
+
+	public void ChangeDense(){
+		Vector3 position = new Vector3 ();
+		position.z = -100.5f;
+		Vector3 scale = new Vector3 ();
+		Vector3 curScale = CurrentScale ();
+
+		formIndex = 3;
+		position.z = -20.75f;
+		scale = MultiplyVector (formScale [formIndex], curScale);
+		gameObject.transform.localPosition = position;
+		gameObject.transform.localScale = scale;
+	}
+
+	public void ChangeSphere(){
+		Vector3 position = new Vector3 ();
+		position.z = -100.5f;
+		Vector3 scale = new Vector3 ();
+		Vector3 curScale = CurrentScale ();
+
+		formIndex = 1;
+		//gameObject.transform.position = position;
+		gameObject.transform.localPosition = position;
+		gameObject.transform.localScale = MultiplyVector(defaultScale, CurrentScale());
 	}
 
 	Vector3 MultiplyVector(Vector3 v_1, Vector3 v_2)
@@ -108,8 +146,12 @@ public class HealthBar : MonoBehaviour {
 			CurHealth = MaxHealth;
 		}
 		ChangeSize ();
+		if (IsDead ()) {
+			AudioManager.Singleton.PlaySound ("KO");
+			PlayerUpgrades.upgrades.Game_Over ();
+		}
 	}
-
+		
 	void ChangeSize()
 	{
 		healthNumber.text = CurHealth + "";

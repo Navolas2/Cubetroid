@@ -48,7 +48,8 @@ public class MaterialManager : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 		
-		if (Input.GetKeyDown (KeyCode.Q)) {
+		if (Input.GetButtonDown("Scroll_Left")) {
+			Debug.Log ("pressed Q");
 			if (!player.Clinging) {
 				if (MatIndex == 0) {
 					MatIndex = 4;
@@ -59,7 +60,7 @@ public class MaterialManager : MonoBehaviour {
 				ChangeMaterial ();
 			}
 		}
-		if (Input.GetKeyDown (KeyCode.E)) {
+		if (Input.GetButtonDown("Scroll_Right")) {
 			if (!player.Clinging) {
 				if (MatIndex == 4) {
 					MatIndex = 0;
